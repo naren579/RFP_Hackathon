@@ -65,7 +65,7 @@ retriever1=db3.as_retriever()
 
 #################Initialize session state to store history#############################
 
-if "openai_model" not in st.session_state:
+if "gemini_model" not in st.session_state:
     st.session_state["gemini_model"] = "gemini-1.5-flash"
 
 # Initialize chat history
@@ -280,7 +280,7 @@ def get_final_response(user_prompt):
 #######################################################################################
 
 # Accept user input
-if query := st.chat_input("Enter your query here?") and GEMINI_API_KEY:
+if query := st.chat_input("Enter your query here?"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": query})
     # Display user message in chat message container
@@ -292,8 +292,6 @@ if query := st.chat_input("Enter your query here?") and GEMINI_API_KEY:
     response = st.write(stream)
     st.session_state.messages.append({"role": "assistant", "content": response})
 
-else:
-    st.write('Please provide gemini api key to proceed')
 
 # ###############################################################################
 
