@@ -52,7 +52,7 @@ import chromadb
 # OPENAI_API_KEY=userdata.get('OPENAI_API_KEY')
 # GEMINI_API_KEY=userdata.get('GEMINI_API_KEY')
 
-#embedding_func = OpenAIEmbeddings(api_key=OPENAI_API_KEY)
+embedding_func = OpenAIEmbeddings(api_key=st.secrets['openai_api_key'])
 
 
 ################################# Loading Vector Database #############################
