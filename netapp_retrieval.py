@@ -42,10 +42,10 @@ with st.sidebar:
     GEMINI_API_KEY = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
 #################################APIKEY################################################
 
-# __import__('pysqlite3')
-# import sys
-# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-#import chromadb
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+import chromadb
 
 
 # from google.colab import userdata
