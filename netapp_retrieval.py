@@ -244,10 +244,11 @@ def multi_modal_rag_chain(retriever,GEMINI_API_KEY):
 # Create RAG chain
 if GEMINI_API_KEY:
     chain_multimodal_rag = multi_modal_rag_chain(retriever_test,GEMINI_API_KEY)
+    gemini_model = ChatGoogleGenerativeAI(model='gemini-1.5-flash',api_key=GEMINI_API_KEY,temperature=0)
 else:
     st.write('Provide gemini API key to procees')
 
-gemini_model = ChatGoogleGenerativeAI(model='gemini-1.5-flash',api_key=GEMINI_API_KEY,temperature=0)
+
 
 def get_modified_prompt(user_prompt):
     """Get the user prompt and reframe it to our vendor specific format"""
