@@ -39,7 +39,7 @@ from PIL import Image
 
 #################################APIKeY################################################
 with st.sidebar:
-    GEMINI_API_KEY = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
+    GEMINI_API_KEY = st.text_input("GEMINI API KEY", key="chatbot_api_key", type="password")
 #################################APIKEY################################################
 
 __import__('pysqlite3')
@@ -242,7 +242,10 @@ def multi_modal_rag_chain(retriever,GEMINI_API_KEY):
 
 
 # Create RAG chain
-chain_multimodal_rag = multi_modal_rag_chain(retriever_test,GEMINI_API_KEY)
+if GEMINI_API_KEY:
+    chain_multimodal_rag = multi_modal_rag_chain(retriever_test,GEMINI_API_KEY)
+else:
+    st.write('Provide gemini API key to procees')
 
 gemini_model = ChatGoogleGenerativeAI(model='gemini-1.5-flash',api_key=GEMINI_API_KEY,temperature=0)
 
