@@ -289,7 +289,7 @@ if query := st.chat_input("Enter your query here?"):
 
     with st.chat_message("assistant"):
         response = get_final_response(query)
-        st.markdown(stream)
+        st.markdown(response)
     st.session_state.messages.append({"role": "assistant", "content": response})
 
 
