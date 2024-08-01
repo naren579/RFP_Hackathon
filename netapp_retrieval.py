@@ -248,7 +248,7 @@ if GEMINI_API_KEY:
     chain_multimodal_rag = multi_modal_rag_chain(retriever_test,GEMINI_API_KEY)
     gemini_model = ChatGoogleGenerativeAI(model='gemini-1.5-flash',api_key=GEMINI_API_KEY,temperature=0)
 else:
-    st.write('Provide gemini API key to procees')
+    st.write('Provide gemini API key to proceed')
 
 
 
