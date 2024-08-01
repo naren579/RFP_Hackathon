@@ -65,8 +65,8 @@ retriever1=db3.as_retriever()
 
 #################Initialize session state to store history#############################
 
-if "gemini_model" not in st.session_state:
-    st.session_state["gemini_model"] = "gemini-1.5-flash"
+# if "gemini_model" not in st.session_state:
+#     st.session_state["gemini_model"] = "gemini-1.5-pro"
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -224,7 +224,7 @@ def multi_modal_rag_chain(retriever,GEMINI_API_KEY):
     """
 
     # Multi-modal LLM
-    gemini_model=ChatGoogleGenerativeAI(model= "gemini-1.5-flash",google_api_key=GEMINI_API_KEY)
+    gemini_model=ChatGoogleGenerativeAI(model= "gemini-1.5-pro",google_api_key=GEMINI_API_KEY)
     #model = ChatOpenAI(temperature=0, model="gpt-4", max_tokens=1024,api_key=OPENAI_API_KEY)
 
     # RAG pipeline
@@ -244,7 +244,7 @@ def multi_modal_rag_chain(retriever,GEMINI_API_KEY):
 # Create RAG chain
 if GEMINI_API_KEY:
     chain_multimodal_rag = multi_modal_rag_chain(retriever_test,GEMINI_API_KEY)
-    gemini_model = ChatGoogleGenerativeAI(model='gemini-1.5-flash',api_key=GEMINI_API_KEY,temperature=0)
+    gemini_model = ChatGoogleGenerativeAI(model='gemini-1.5-pro',api_key=GEMINI_API_KEY,temperature=0)
 else:
     st.write('Provide gemini API key to procees')
 
