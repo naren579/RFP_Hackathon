@@ -279,7 +279,7 @@ def get_final_response(user_prompt):
 #######################################################################################
 
 # Accept user input
-if query := st.chat_input("Enter your query here?"):
+if query := st.chat_input("Enter your query here?") and GEMINI_API_KEY:
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": query})
     # Display user message in chat message container
@@ -290,6 +290,9 @@ if query := st.chat_input("Enter your query here?"):
         stream = get_final_response(query)
     response = st.write(stream)
     st.session_state.messages.append({"role": "assistant", "content": response})
+
+else:
+    st.write('Please provide gemini api key to proceed')
 
 # ###############################################################################
 
