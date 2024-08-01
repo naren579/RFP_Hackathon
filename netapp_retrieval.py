@@ -218,7 +218,7 @@ User-provided question:
     return [HumanMessage(content=messages)]
 
 
-def multi_modal_rag_chain(retriever):
+def multi_modal_rag_chain(retriever,GEMINI_API_KEY):
     """
     Multi-modal RAG chain
     """
@@ -242,7 +242,7 @@ def multi_modal_rag_chain(retriever):
 
 
 # Create RAG chain
-chain_multimodal_rag = multi_modal_rag_chain(retriever_test)
+chain_multimodal_rag = multi_modal_rag_chain(retriever_test,GEMINI_API_KEY)
 
 gemini_model = ChatGoogleGenerativeAI(model='gemini-1.5-flash',api_key=GEMINI_API_KEY,temperature=0)
 
