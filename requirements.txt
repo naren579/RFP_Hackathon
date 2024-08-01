@@ -5,4 +5,5 @@ langchain_core
 langchain_google_genai
 streamlit
 Pillow
-chroma
+chromadb
+pysqlite3-binary
