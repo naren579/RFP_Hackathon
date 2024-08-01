@@ -15,7 +15,7 @@ Original file is located at
 # !pip install google.generativeai langchain-google-genai
 
 from langchain.storage import InMemoryByteStore,LocalFileStore
-from langchain_chroma import Chroma
+from langchain.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings,ChatOpenAI
 from langchain.retrievers.multi_vector import MultiVectorRetriever
 from langchain_core.documents import Document
